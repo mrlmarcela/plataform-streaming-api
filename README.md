@@ -25,10 +25,10 @@ npm install
 
 ## Comandos úteis
 
-**Rodar o projeto:**
+**Rodar o projeto localmente:**
 
 ```bash
-npm run start
+npm run dev
 ```
 
 Esse comando:
