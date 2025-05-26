@@ -18,6 +18,11 @@ API para gerenciamento de playlists e itens de streaming, usando Fastify, Prisma
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/playlists?schema=public"
 ```
 
+2. Instale todas as dependências do projeto usando o comando:
+```bash
+npm install
+```
+
 ## Comandos úteis
 
 **Rodar o projeto:**
@@ -42,4 +47,9 @@ npm run populate
 
 ```bash
 npm run test
+```
+
+**Ver o banco de dados:**
+```bash
+npx prisma studio
 ```
