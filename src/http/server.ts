@@ -31,6 +31,8 @@ app.get('/', async (request, reply) => {
   return { message: 'Hello, World!' };
 });
 
-app.listen({ port: 3000 }).then(() => {
-  console.log('Servidor rodando na porta 3000...');
+const port = Number(process.env.PORT) || 3000;
+
+app.listen({ port }).then(() => {
+  console.log(`Servidor rodando na porta ${port}...`);
 });
