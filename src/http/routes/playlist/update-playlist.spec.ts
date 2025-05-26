@@ -3,7 +3,7 @@ describe("Update playlist", () => {
     const createPlaylistRes = await fetch("http://localhost:3000/playlists", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: "Playlist de Teste" }),
+      body: JSON.stringify({ name: "Músicas" }),
     });
 
     
@@ -14,10 +14,10 @@ describe("Update playlist", () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        title: "Vídeo A",
-        description: "Descrição A",
-        category: "Filmes",
-        url: "https://example.com/video-a",
+        title: "Ed Sheeran - Shape of You",
+        description: "Música do Ed Sheeran",
+        category: "Música",
+        url: "https://www.youtube.com/watch?v=JGwWNGJdvx8",
       }),
     });
 
@@ -25,10 +25,10 @@ describe("Update playlist", () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        title: "Vídeo B",
-        description: "Descrição B",
-        category: "Filmes",
-        url: "https://example.com/video-b",
+        title: "Maroon 5 - Girls Like You ft. Cardi B (Official Music Video)",
+        description: "Girls Like You is out now.",
+        category: "Música",
+        url: "https://www.youtube.com/watch?v=aJOTlE1K90k",
       }),
     });
 
@@ -44,7 +44,7 @@ describe("Update playlist", () => {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: "Playlist Atualizada",
+          name: "Músicas Atualizadas",
           addItemIds: [createdItem1.id, createdItem2.id],
         }),
       }
@@ -53,7 +53,7 @@ describe("Update playlist", () => {
     const updatedPlaylist = await updateRes.json();
 
     expect(updateRes.status).toBe(200);
-    expect(updatedPlaylist.name).toBe("Playlist Atualizada");
+    expect(updatedPlaylist.name).toBe("Músicas Atualizadas");
     expect(updatedPlaylist.items.length).toBeGreaterThanOrEqual(2);
     expect(updatedPlaylist.items.map((i: any) => i.id)).toEqual(
       expect.arrayContaining([createdItem1.id, createdItem2.id])

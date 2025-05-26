@@ -3,7 +3,7 @@ describe("Create item", () => {
     const body = {
       title: "Jornal Nacional",
       description: "Edição do dia 20/05/2025",
-      category: "Noticias",
+      category: "Notícias",
       url: "https://www.youtube.com/watch?v=HTtYGnpbfis",
     };
 

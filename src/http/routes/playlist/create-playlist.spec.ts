@@ -1,7 +1,7 @@
 describe("Create playlist", () => {
   it("POST to /playlist should return 201", async () => {
     const body = {
-      name: "My Playlist",
+      name: "Playlist teste",
     };
 
     const response = await fetch("http://localhost:3000/playlists", {

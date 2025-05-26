@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+import cors from '@fastify/cors'
 import { createPlaylist } from './routes/playlist/create-playlist';
 import { getPlaylist } from './routes/playlist/get-playlist';
 import { updatePlaylist } from './routes/playlist/update-playlist';
@@ -10,6 +11,11 @@ import { updateItem } from './routes/item/update-item';
 import { deleteItem } from './routes/item/delete-item';
 
 const app = fastify();
+
+await app.register(cors, {
+  origin: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+})
 
 app.register(createPlaylist);
 app.register(getPlaylist);
